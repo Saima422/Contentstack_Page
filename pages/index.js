@@ -1,10 +1,25 @@
 import Head from 'next/head'
+import { useEffect, useState } from 'react';
 import Banner from '../components/Banner/Banner';
+import Navbar from '../components/Navbar/Navbar';
 import PerformerSection from '../components/Performer_Section/Performer';
 import styles from '../styles/Home.module.css'
 
 export default function Home({ data }) {
-  console.log(data);
+  const [scrollValue, setScrollValue] = useState(0);
+
+  const handleScroll = () => {
+    setScrollValue(window.scrollY);
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [])
+
   return (
     <div className={styles.container}>
       <Head>
@@ -14,6 +29,7 @@ export default function Home({ data }) {
       </Head>
 
       <main className={styles.main}>
+        <Navbar data={data.navbar[0]} scroll={scrollValue} />
         <Banner data={data.banner[0]}/>
         <div style={{height: `100px`}}></div>
         <PerformerSection data={data.section[0]}/>

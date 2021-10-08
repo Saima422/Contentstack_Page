@@ -1,7 +1,7 @@
 import styles from "./Performer.module.scss";
 
 function PerformerSection({ data }) {
-    console.log(data);
+    // console.log(data);
     return <div className={styles.container}>
         <div style={{
                 backgroundImage: `url(${data.bannner_backgroud.url})`,
