@@ -1,8 +1,10 @@
 import Head from 'next/head'
-import Image from 'next/image'
+import Banner from '../components/Banner/Banner';
+import PerformerSection from '../components/Performer_Section/Performer';
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
+export default function Home({ data }) {
+  console.log(data);
   return (
     <div className={styles.container}>
       <Head>
@@ -12,8 +14,24 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        
+        <Banner data={data.banner[0]}/>
+        <div style={{height: `100px`}}></div>
+        <PerformerSection data={data.section[0]}/>
+        <div style={{height: `100px`}}></div>
+
       </main>
     </div>
   )
+}
+
+export async function getServerSideProps(context) {
+
+  const res = await fetch('http://localhost:4000/contentstack/homepage');
+  const data = await res.json();
+
+  return {
+    props: {
+      data: data
+    }
+  }
 }
