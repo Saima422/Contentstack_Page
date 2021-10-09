@@ -2,7 +2,8 @@ import styles from "./Performer.module.scss";
 
 function PerformerSection({ data }) {
     return <div className={styles.container}>
-        <div style={{backgroundImage: `url(${data.bannner_backgroud.url})`}} className={styles.waveDiv}>
+        <div style={{backgroundImage: `url(${data.bannner_backgroud.url})`}} className={styles.waveDiv}></div>
+        <div className={styles.section}>
                 <div className={styles.imgContainer}>
                     <img src={data.section_image.url} width={200} />
                 </div>
