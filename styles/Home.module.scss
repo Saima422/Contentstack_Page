@@ -1,8 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;600&display=swap');
+
 .container {
-  min-height: 150vh;
+  font-family: 'Montserrat', sans-serif;
+  // min-height: 150vh;
+  width:100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  overflow-x: hidden;
 }
+
 
