@@ -24,7 +24,7 @@ function Footer({footerData}){
                         <ul>
                             {linkItem.link.map((link)=>{
                                 return (
-                                    <li key={link.title}><a href={link.href} target='_blank'>{link.title}</a></li>
+                                    <li key={link.title}><a href={link.href}>{link.title}</a></li>
                                 )
                             })}
                         </ul>
@@ -37,7 +37,7 @@ function Footer({footerData}){
                 <div className={styles.systemStatus}>
                     <p>
                         {system_details.system_status}:
-                        <a href={system_details.link.href} target='_blank'>
+                        <a href={system_details.link.href}>
                             <i className={`fa fa-circle ${styles.active}`}></i>
                             {system_details.link.title}
                         </a>
@@ -46,13 +46,11 @@ function Footer({footerData}){
                 <ul className={styles.legalLinks}>
                     {legal_link.map((link,i)=>{
                         return(
-                            <li key={i}><a href={link.href} target='_blank'>{link.title}</a></li>
+                            <li key={i}><a href={link.href}>{link.title}</a></li>
                         )
                     })}
                 </ul>
-            </div>
-            
-            
+            </div>  
         </footer>
     )
 }

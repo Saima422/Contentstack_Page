@@ -1,0 +1,31 @@
+.navMenu{
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.514) 25%, #2D2157 25%, #2D2157 25%, #2D2157 25%);
+    width: 100%;
+    min-height: 250vh;
+    position: absolute;
+    right: 0;
+    z-index: 99;
+
+
+    .close{
+        color: white;
+        position: absolute;
+        right: 50px;
+        top: 30px;
+    }
+
+    .navMenuItems{
+        width: 65%;
+        position: absolute;
+        right: 0;
+
+        li{
+            list-style: none;
+            color: white;
+            padding: 15px;
+            font-size: 24px;
+            font-weight: 500;
+        }
+    }
+
+}
