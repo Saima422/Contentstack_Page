@@ -10,7 +10,7 @@
         // border: 2px solid green;
         position: relative;
         color: white;
-        margin: 0 100px;
+        margin: 0 150px;
         height: 500px;
         display: flex;
         justify-content: space-between;
@@ -57,11 +57,10 @@
         .flexRight{
             // border: 2px solid white;
             width: 25%;
-            
             h5{
                 position: absolute;
                 top: 435px; 
-                right: 10px;
+                right: 0;
                 font-weight: 800;
                 font-size: 1.2rem;
             }
