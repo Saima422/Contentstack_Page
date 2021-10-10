@@ -2,7 +2,7 @@ import styles from './Footer.module.scss'
 
 function Footer({footerData}){
     
-    let {contentstack_logo ,social_media_links,footer_links,legal_link,system_details} = footerData[0]
+    let {contentstack_logo ,social_media_links,footer_links,legal_link,system_details} = footerData
     return(
         <footer className={styles.footer}>
             <div className={styles.footerRow1}>

@@ -1,6 +1,5 @@
 import styles from "./Navbar.module.scss";
 import {FiMenu} from "react-icons/fi";
-import { useState } from "react";
 import { useToggleContext } from "../../Context_API/store";
 
 
@@ -10,10 +9,7 @@ function Navbar ({data, scroll}) {
 
     const hamburgerState = () => set_side_Bar(!sideBar);
 
-    return <div style={{
-                background: `${background}`,
-                // position: sideBar ? 'fixed': "" 
-            }} className={styles.navContainer}>
+    return <div style={{background: `${background}`}} className={styles.navContainer}>
             
                 <div className={styles.logo}>
                     <img src={data.navbar_logo.url}></img>

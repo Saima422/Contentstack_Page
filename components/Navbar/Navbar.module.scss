@@ -26,18 +26,13 @@
 
     nav{
         width: 80vw;
-
         .navLinks{
             display: flex;
             justify-content: space-evenly;
             width: 80%;
             margin: 20px 0;
-            margin-left: 85px;
+            margin-left: 10%;
             padding-right: 50px;
-
-            @media (max-width: 1150px) {
-                width: 90%;
-            }
 
             li{
                 list-style: none;
@@ -52,21 +47,13 @@
                 border: 2px solid transparent;
                 background-color: #E95646;
                 border-radius: 3px;
-                position: relative;
-                min-width: 200px;
-                height: 40px;
-                margin-top: 10px;
+                min-width: 160px;
+                margin: 10px;
                 transition: background-color .5s ease-in;
-
+                padding: 10px 15px;
                 &:hover {
                     border: 2px solid white;
                     background-color: transparent;
-                }
-
-                a{
-                    position: absolute;
-                    top: 5px;
-                    left: 25px;
                 }
             }
 
@@ -155,5 +142,19 @@
         display: block;
         margin-right: 50px;
         margin-top: 20px;
+    }
+}
+
+@media (max-width:1156px){
+    .navContainer{
+        nav{
+            .navLinks{
+                width: 70%;
+                .navLinkDiv{
+                    padding: 18px 15px;
+                }
+            }
+            
+        }
     }
 }
