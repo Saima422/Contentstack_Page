@@ -1,7 +1,10 @@
 import Slider from "react-slick";
+import { useToggleContext } from "../../Context_API/store";
 import styles from './Branding_Logos.module.scss';
 
 function BrandingLogos( {data}){
+  // const {sideBar } = useToggleContext();
+
   let {client} = data[0]
     var settings = {
         infinite: true,
@@ -27,7 +30,9 @@ function BrandingLogos( {data}){
         ]
         }
     return(
-        <div className={styles.container}>
+        <div style={{
+            // position: sideBar ? 'fixed': ""
+          }} className={styles.container}>
           {/* {console.log(data[0].client)} */}
 		    <Slider {...settings}> 
           {client.map((item)=>{

@@ -1,16 +1,18 @@
 import styles from "./Navbar.module.scss";
 import {FiMenu} from "react-icons/fi";
 import { useState } from "react";
+import { useToggleContext } from "../../Context_API/store";
 
 
 function Navbar ({data, scroll}) {
     let background = scroll ? `#614FB9` : `transparent`;
-    const [sideBar, setSideBar] = useState(false);
+    const { sideBar, set_side_Bar } = useToggleContext();
 
-    const hamburgerState = () => setSideBar(!sideBar);
+    const hamburgerState = () => set_side_Bar(!sideBar);
 
     return <div style={{
                 background: `${background}`,
+                // position: sideBar ? 'fixed': "" 
             }} className={styles.navContainer}>
             
                 <div className={styles.logo}>

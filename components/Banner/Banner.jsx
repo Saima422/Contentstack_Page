@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import { useToggleContext } from "../../Context_API/store";
 import styles from "./Banner.module.scss";
 
 function Banner({ data }) {
    let [bannerImage ,setBannerImage]= useState(`url(${data.banner_image.url})`);
+//    const {sideBar} = useToggleContext();
 
     useEffect(()=>{
         window.addEventListener("resize" || "onload", ()=>{
@@ -15,7 +17,10 @@ function Banner({ data }) {
     },[])
 
     return (
-        <div style = {{backgroundImage: bannerImage}} className={styles.container}>    
+        <div style = {{
+                backgroundImage: bannerImage,
+                // position: sideBar ? 'fixed': "" 
+                }} className={styles.container}>    
             <div className={styles.innerContainer}>
                 <div className={styles.flexLeft}>
                     <h1>{data.banner_heading}</h1>

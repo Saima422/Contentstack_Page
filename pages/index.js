@@ -7,6 +7,7 @@ import Banner from '../components/Banner/Banner';
 import Navbar from '../components/Navbar/Navbar';
 import PerformerSection from '../components/Performer_Section/PerformanceSection';
 import Sidebar from '../components/Sidebar/Sidebar';
+import { useToggleContext } from '../Context_API/store';
 
 export async function getServerSideProps(context) {
   const res = await fetch('http://localhost:4000/contentstack/homepage');
@@ -25,7 +26,7 @@ export async function getServerSideProps(context) {
 export default function Home({navbar, banner, branding_logos, performance_section, footer}) {
 
   const [scrollValue, setScrollValue] = useState(0);
-  let sidebarValue = false;
+  const { sideBar } = useToggleContext();
 
   const handleScroll = () => {
     setScrollValue(window.scrollY);
@@ -53,7 +54,7 @@ export default function Home({navbar, banner, branding_logos, performance_sectio
         <Footer footerData = {footer} />
 
         {
-          sidebarValue ?
+          sideBar ?
           <Sidebar data={navbar[0]} />
           :
           <></>

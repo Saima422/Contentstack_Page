@@ -1,7 +1,12 @@
+import { useToggleContext } from "../../Context_API/store";
 import styles from "./Performer.module.scss";
 
 function PerformerSection({ data }) {
-    return <div className={styles.container}>
+    // const {sideBar} = useToggleContext();
+
+    return <div style={{
+            // position: sideBar ? 'fixed': ""
+        }} className={styles.container}>
         <div style={{backgroundImage: `url(${data.bannner_backgroud.url})`}} className={styles.waveDiv}></div>
         <div className={styles.section}>
                 <div className={styles.imgContainer}>
