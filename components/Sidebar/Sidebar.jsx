@@ -17,9 +17,11 @@ function Sidebar ({data}){
                 <li><a href="#">Login</a></li>
                 <br/><br/>
                 {
-                    data.navbar_links.map((item) => (
+                    data.navbar_links.map((item, i) => (
                         <>
-                            <li className={(item.iscta? styles.ctaButton : '')}><a href={item.link_href.href}>{item.link_href.title}</a></li>
+                            <li className={(item.iscta? styles.ctaButton : '')} key={item.link_href.title}>
+                                <a href={item.link_href.href}>{item.link_href.title}</a>
+                            </li>
                             {
                                 item.right_div.related_links.map((link, index) => (
                                     <li key={index}><a href={link.href}>{link.title}</a></li>
