@@ -43,7 +43,7 @@ export async function getServerSideProps(context) {
 
 export default function Home({page, navbar, banner, branding_logos, performance_section, footer, error}) {
   const [scrollValue, setScrollValue] = useState(0);
-  const { sideBar } = useToggleContext();
+  const { sideBar } = !error ?  useToggleContext() : '';
 
   const handleScroll = () => {
     setScrollValue(window.scrollY);
