@@ -1,0 +1,160 @@
+.navContainer{
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+
+    .logo{
+        min-width: 180px;
+        height: 30px;
+        margin: auto 0;
+        margin-left: 220px;
+
+        @media (max-width: 1700px) {
+            margin-left: 100px;
+        }
+
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    nav{
+        width: 80vw;
+        .navLinks{
+            display: flex;
+            justify-content: space-evenly;
+            width: 80%;
+            margin: 20px 0;
+            margin-left: 10%;
+            padding-right: 50px;
+
+            li{
+                list-style: none;
+                border-bottom: 2px solid transparent;
+
+                &:hover {
+                    border-bottom: 2px solid white;
+                }
+            }
+
+            .ctaButton{
+                border: 2px solid transparent;
+                background-color: #E95646;
+                border-radius: 3px;
+                min-width: 160px;
+                margin: 10px;
+                transition: background-color .5s ease-in;
+                padding: 10px 15px;
+                &:hover {
+                    border: 2px solid white;
+                    background-color: transparent;
+                }
+            }
+
+            .navLinkDiv{
+                position: relative;
+                padding: 18px 20px;
+            }
+
+            .dropdown{
+                background-color: white;
+                color: black;
+                width: 400px;
+                min-height: 300px;
+                display: none;
+                position: absolute;
+                margin-top: 20px;
+                margin-left: -200px;
+
+                .subLeft{
+                    width: 50%;
+                    background-color: #282535;
+
+                    img{
+                        width: 82%;
+                        height: 120px;
+                        margin: 18px 0 0 18px;
+                    }
+
+                    p{
+                        color: rgb(158, 157, 157);
+                        margin: 3px auto;
+                        width: 80%;
+                        font-size: 18px;
+                    }
+
+                    a{
+                        color: white;
+                        display: block;
+                        width: 50%;
+                        margin: 20px auto;
+                        font-size: 18px;
+                    }
+                }
+
+                .subRight{
+                    width: 50%;
+
+                    li{
+                        padding: 12px 0 12px 10px;
+                        background-color: transparent;
+                        font-size: 20px;
+
+                        &:hover{
+                            background-color: #614FB9;
+                            color: white;
+                        }
+                    }
+                }
+            }
+
+            .navLinkDiv:hover .dropdown {
+                display: flex;
+            }
+        }
+    }    
+}
+
+.bars{
+    display: none;
+}
+
+@media (max-width:1008px){
+    .Nav {
+        display: none;
+    }
+
+    .navContainer{
+        width: 100%;
+    }
+
+    .navContainer .logo{
+        margin-left: 60px;
+    }
+
+    .bars{
+        display: block;
+        margin-right: 50px;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width:1156px){
+    .navContainer{
+        nav{
+            .navLinks{
+                width: 70%;
+                .navLinkDiv{
+                    padding: 18px 15px;
+                }
+            }
+            
+        }
+    }
+}

@@ -1,0 +1,130 @@
+.container{
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    .innerContainer{
+        position: relative;
+        color: white;
+        margin: 0 215px;
+        height: 500px;
+        display: flex;
+        justify-content: space-between;
+
+        @media (max-width: 1700px) {
+            margin: 0 100px;
+        }
+
+        .flexLeft{
+            padding-right: 20px;
+            width: 70%;
+            h1{
+                font-size: 2.5rem;
+                letter-spacing: -0.5px;
+                line-height: 80px;
+                text-transform: uppercase;
+                margin-top: 120px;
+
+                @media (max-width: 1700px) {
+                    line-height: 60px;
+                }
+
+                @media (max-width: 1200px) {
+                    font-size: 1.8rem;
+                }
+        
+            }
+
+            p{
+                padding: 0 0 15px 0;
+                line-height: 28px;
+                font-size: 19px;
+                letter-spacing: 0.5px;
+                margin-bottom: 0;
+            }
+
+            a{
+                border: 2px solid transparent;
+                width: 180px;
+                height: 40px;
+                display: block;
+                background-color: #F5C42D;
+                color: black;
+                border-radius: 3px;
+                margin-top: 20px;
+
+                &:hover{
+                    border: 2px solid #F5C42D;
+                }
+
+                p{
+                    font-size:14px;
+                    font-weight: 600;
+                    text-align: center;
+                    margin: 5px ;
+                    letter-spacing: 1px;
+                }
+            }
+        }
+
+        .flexRight{
+            position: relative;
+            width: 300px;
+
+            h5{
+                position: absolute;
+                top: 435px; 
+                right: 0;
+                font-weight: 800;
+                font-size: .9rem;
+                letter-spacing: -2;
+            }
+        }
+    }
+}
+
+@media (max-width:1008px) {
+    .container{
+        flex-direction: column;
+        justify-content: space-around;
+        .innerContainer{
+            flex-direction:column ;
+            align-items: center;
+            justify-content: space-around;
+            text-align: center;
+            margin: 0 ;
+            padding:50px 20px;
+            .flexLeft{
+                width:100%;
+                padding: 0;
+                h1{
+                    font-size: 1.5rem;
+                    margin-bottom: 0px;
+                    margin-top: 70px;
+                }
+                p{
+                    font-size: .8rem;
+                }
+                a{
+                    margin: -5px auto 0;
+                }
+            }
+            .flexRight{
+                width: 100%;
+                h5{
+                    margin-top: 5px;
+                    position: unset;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    } 
+}
+
+@media (max-width:441px){
+    .container{
+        padding: 50px 0;
+    }
+}
+
+
