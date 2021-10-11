@@ -17,6 +17,7 @@ export async function getServerSideProps(context) {
   const data = await res.json();
   return {
     props: {
+      page: data.page_metadata,
       navbar : data.navbar[0],
       banner : data.banner[0],
       branding_logos : data.clients[0],
@@ -26,7 +27,7 @@ export async function getServerSideProps(context) {
   }
 }
 
-export default function Home({navbar, banner, branding_logos, performance_section, footer}) {
+export default function Home({page,navbar, banner, branding_logos, performance_section, footer}) {
 
   const [scrollValue, setScrollValue] = useState(0);
   const { sideBar } = useToggleContext();
@@ -45,10 +46,10 @@ export default function Home({navbar, banner, branding_logos, performance_sectio
 
   return (
       <div className={styles.container}>
-        <Head>
-          <title>Content Management System</title>
-          <link rel="icon" href="/icon-image.png" />
-        </Head>
+         <Head>
+            <title>{page.page_title}</title>
+            <link rel="icon" href={page.icon.url}/>
+          </Head>
           
         <Navbar data={navbar} scroll={scrollValue} />
         <Banner data={banner} />
